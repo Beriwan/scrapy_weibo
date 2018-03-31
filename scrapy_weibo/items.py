@@ -4,11 +4,17 @@
 #
 # See documentation in:
 # https://doc.scrapy.org/en/latest/topics/items.html
+from scrapy import Item, Field
 
-import scrapy
 
+class WeiboItem(Item):
+    table_name = 'weibo'
 
-class ScrapyWeiboItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    id = Field()
+    content = Field()
+    forward_count = Field()
+    comment_count = Field()
+    like_count = Field()
+    posted_at = Field()
+    url = Field()
+    user = Field()
