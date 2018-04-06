@@ -14,9 +14,6 @@ import pymongo
 from scrapy_weibo.items import WeiboItem
 
 
-
-
-
 class MongoPipeline(object):
     def __init__(self, mongo_uri, mongo_db):
         self.mongo_uri = mongo_uri

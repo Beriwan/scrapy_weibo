@@ -28,9 +28,8 @@ class CookiesMiddleware():
     @classmethod
     def from_crawler(cls, crawler):
         return cls(
-            cookies_pool_url = crawler.settings.get('COOKIES_POOL_URL')
+            cookies_pool_url=crawler.settings.get('COOKIES_POOL_URL')
         )
-
 
     def process_request(self, request, spider):
         cookies = self._get_random_cookies()
