@@ -73,7 +73,7 @@ DOWNLOADER_MIDDLEWARES = {
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     'scrapy_weibo.pipelines.MongoPipeline': 300,
-
+    'scrapy_redis.pipelines.RedisPipeline': 301,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -102,4 +102,6 @@ COOKIES_POOL_URL = 'http://127.0.0.1:5000/weibo/random'
 MONGO_URI = 'localhost'
 MONGO_DATABASE = 'weibo'
 
-
+SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+REDIS_URL = 'redis://ubuntu:woshiren12@193.112.143.253:6379'
